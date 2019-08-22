@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="-900 -600 1200 1200">
+
+<line stroke="#000000" stroke-width="1" opacity="1" x1="-600" y1="-600" x2="600" y2="-600"></line>
+
+<line stroke="#000000" stroke-width="1" opacity="1" x1="600" y1="-600" x2="600" y2="600"></line>
+
+<line stroke="#000000" stroke-width="1" opacity="1" x1="-600" y1="-600" x2="-600" y2="600"></line>
+
+<line stroke="#000000" stroke-width="1" opacity="1" x1="-600" y1="600" x2="600" y2="600"></line>
+
+
+<line id="ObjLen1" stroke="#FF0000" stroke-width="1" opacity="1" x1="125" y1="-240" x2="-125" y2="-240"></line>
+
+<line id="ObjLen2" stroke="#FF0000" stroke-width="1" opacity="1" x1="125" y1="240" x2="-125" y2="240"></line>
+
+<line id="ObjLen3" stroke="#FF0000" stroke-width="1" opacity="1" x1="-125" y1="240" x2="-125" y2="-240"></line>
+
+<line id="ObjLen4" stroke="#FF0000" stroke-width="1" opacity="1" x1="125" y1="240" x2="125" y2="-240"></line>
+
+
+<line id="ObjLine_Len_Theta_T" stroke="#0000FF" stroke-width="1" opacity="1" x1="275" y1="-499.8076211353316" x2="-275" y2="-499.8076211353316"></line>
+
+<line id="ObjLine_Len_Theta_B" stroke="#0000FF" stroke-width="1" opacity="1" x1="275" y1="499.8076211353316" x2="-275" y2="499.8076211353316"></line>
+
+<line id="ObjLine_Len_Theta_L" stroke="#0000FF" stroke-width="1" opacity="1" x1="406.9077862357725" y1="137.39395700229937" x2="406.9077862357725" y2="-137.39395700229937"></line>
+
+<line id="ObjLine_Len_Theta_R" stroke="#0000FF" stroke-width="1" opacity="1" x1="-406.9077862357725" y1="137.39395700229937" x2="-406.9077862357725" y2="-137.39395700229937"></line>
+
+
+<line id="ObjLine_Len_Theta_TR" stroke="#FF0000" stroke-width="1" opacity="1" x1="125" y1="-240" x2="406.9077862357725" y2="-137.39395700229937"></line>
+
+<line id="ObjLine_Len_Theta_TL" stroke="#FF0000" stroke-width="1" opacity="1" x1="-125" y1="-240" x2="-406.9077862357725" y2="-137.39395700229937"></line>
+
+<line id="ObjLine_Len_Theta_BR" stroke="#FF0000" stroke-width="1" opacity="1" x1="125" y1="240" x2="406.9077862357725" y2="137.39395700229937"></line>
+
+<line id="ObjLine_Len_Theta_BL" stroke="#FF0000" stroke-width="1" opacity="1" x1="-125" y1="240" x2="-406.9077862357725" y2="137.39395700229937"></line>
+
+
+<line id="ObjLine_Wid_Theta_TR" stroke="#FF0000" stroke-width="1" opacity="1" x1="125" y1="-240" x2="275" y2="-499.8076211353316"></line>
+
+<line id="ObjLine_Wid_Theta_TL" stroke="#FF0000" stroke-width="1" opacity="1" x1="-125" y1="-240" x2="-275" y2="-499.8076211353316"></line>
+
+<line id="ObjLine_Wid_Theta_BR" stroke="#FF0000" stroke-width="1" opacity="1" x1="125" y1="240" x2="275" y2="499.8076211353316"></line>
+
+<line id="ObjLine_Wid_Theta_BL" stroke="#FF0000" stroke-width="1" opacity="1" x1="-125" y1="240" x2="-275" y2="499.8076211353316"></line>
+
+
+<line id="ObjLine_InnLen_Theta_TR" stroke="#0000FF" stroke-width="1" opacity="1" x1="125" y1="-240" x2="493.0044790717032" y2="-240.00000000000003"></line>
+
+<line id="ObjLine_InnLen_Theta_TL" stroke="#0000FF" stroke-width="1" opacity="1" x1="-125" y1="-240" x2="-493.0044790717032" y2="-240.00000000000003"></line>
+
+<line id="ObjLine_InnLen_Theta_BR" stroke="#0000FF" stroke-width="1" opacity="1" x1="125" y1="240" x2="493.0044790717032" y2="240.00000000000003"></line>
+
+<line id="ObjLine_InnLen_Theta_BL" stroke="#0000FF" stroke-width="1" opacity="1" x1="-125" y1="240" x2="-493.0044790717032" y2="240.00000000000003"></line>
+
+
+<line id="ObjLine_InnWid_Theta_TR" stroke="#0000FF" stroke-width="1" opacity="1" x1="125" y1="-240" x2="347.6681596905678" y2="-373.9426764587396"></line>
+
+<line id="ObjLine_InnWid_Theta_TL" stroke="#0000FF" stroke-width="1" opacity="1" x1="-125" y1="-240" x2="-347.6681596905678" y2="-373.9426764587396"></line>
+
+<line id="ObjLine_InnWid_Theta_BR" stroke="#0000FF" stroke-width="1" opacity="1" x1="125" y1="240" x2="347.6681596905678" y2="373.9426764587396"></line>
+
+<line id="ObjLine_InnWid_Theta_BL" stroke="#0000FF" stroke-width="1" opacity="1" x1="-125" y1="240" x2="-347.6681596905678" y2="373.9426764587396"></line>
+
+
+<line id="ObjLine_InnNet_Theta_TR" stroke="#0000FF" stroke-width="1" opacity="1" x1="493.0044790717032" y1="-240.00000000000003" x2="347.6681596905678" y2="-373.9426764587396"></line>
+
+<line id="ObjLine_InnNet_Theta_TL" stroke="#0000FF" stroke-width="1" opacity="1" x1="-493.0044790717032" y1="-240.00000000000003" x2="-347.6681596905678" y2="-373.9426764587396"></line>
+
+<line id="ObjLine_InnNet_Theta_BR" stroke="#0000FF" stroke-width="1" opacity="1" x1="493.0044790717032" y1="240.00000000000003" x2="347.6681596905678" y2="373.9426764587396"></line>
+
+<line id="ObjLine_InnNet_Theta_BL" stroke="#0000FF" stroke-width="1" opacity="1" x1="-493.0044790717032" y1="240.00000000000003" x2="-347.6681596905678" y2="373.9426764587396"></line>
+
+
+<line id="ObjLine_LenNet_Theta_TR" stroke="#FF0000" stroke-width="1" opacity="1" x1="406.9077862357725" y1="-137.39395700229937" x2="493.0044790717032" y2="-240.00000000000003"></line>
+
+<line id="ObjLine_LenNet_Theta_TL" stroke="#FF0000" stroke-width="1" opacity="1" x1="-406.9077862357725" y1="-137.39395700229937" x2="-493.0044790717032" y2="-240.00000000000003"></line>
+
+<line id="ObjLine_LenNet_Theta_BR" stroke="#FF0000" stroke-width="1" opacity="1" x1="406.9077862357725" y1="137.39395700229937" x2="493.0044790717032" y2="240.00000000000003"></line>
+
+<line id="ObjLine_LenNet_Theta_BL" stroke="#FF0000" stroke-width="1" opacity="1" x1="-406.9077862357725" y1="137.39395700229937" x2="-493.0044790717032" y2="240.00000000000003"></line>
+
+
+<line id="ObjLine_WidNet_Theta_TR" stroke="#FF0000" stroke-width="1" opacity="1" x1="275" y1="-499.8076211353316" x2="347.6681596905678" y2="-373.9426764587396"></line>
+
+<line id="ObjLine_WidNet_Theta_TL" stroke="#FF0000" stroke-width="1" opacity="1" x1="-275" y1="-499.8076211353316" x2="-347.6681596905678" y2="-373.9426764587396"></line>
+
+<line id="ObjLine_WidNet_Theta_BR" stroke="#FF0000" stroke-width="1" opacity="1" x1="275" y1="499.8076211353316" x2="347.6681596905678" y2="373.9426764587396"></line>
+
+<line id="ObjLine_WidNet_Theta_BL" stroke="#FF0000" stroke-width="1" opacity="1" x1="-275" y1="499.8076211353316" x2="-347.6681596905678" y2="373.9426764587396"></line>
+
+
+<line id="ObjLine_Len_Outer_TR" stroke="#FF0000" stroke-width="1" opacity="1" x1="406.9077862357725" y1="-137.39395700229937" x2="600" y2="-67.11413872355388"></line>
+
+<line id="ObjLine_Len_Outer_TL" stroke="#FF0000" stroke-width="1" opacity="1" x1="-406.9077862357725" y1="-137.39395700229937" x2="-600" y2="-67.11413872355388"></line>
+
+<line id="ObjLine_Len_Outer_BR" stroke="#FF0000" stroke-width="1" opacity="1" x1="406.9077862357725" y1="137.39395700229937" x2="600" y2="67.11413872355388"></line>
+
+<line id="ObjLine_Len_Outer_BL" stroke="#FF0000" stroke-width="1" opacity="1" x1="-406.9077862357725" y1="137.39395700229937" x2="-600" y2="67.11413872355388"></line>
+
+
+<line id="ObjLine_Wid_Outer_TR" stroke="#FF0000" stroke-width="1" opacity="1" x1="275" y1="-499.8076211353316" x2="332.8460969082653" y2="-600"></line>
+
+<line id="ObjLine_Wid_Outer_TL" stroke="#FF0000" stroke-width="1" opacity="1" x1="-275" y1="-499.8076211353316" x2="-332.8460969082653" y2="-600"></line>
+
+<line id="ObjLine_Wid_Outer_BR" stroke="#FF0000" stroke-width="1" opacity="1" x1="275" y1="499.8076211353316" x2="332.8460969082653" y2="600"></line>
+
+<line id="ObjLine_Wid_Outer_BL" stroke="#FF0000" stroke-width="1" opacity="1" x1="-275" y1="499.8076211353316" x2="-332.8460969082653" y2="600"></line>
+
+
+<line id="ObjLine_InnLen_Outer_TR" stroke="#0000FF" stroke-width="1" opacity="1" x1="493.0044790717032" y1="-240.00000000000003" x2="600" y2="-201.0568151822935"></line>
+
+<line id="ObjLine_InnLen_Outer_TL" stroke="#0000FF" stroke-width="1" opacity="1" x1="-493.0044790717032" y1="-240.00000000000003" x2="-600" y2="-201.0568151822935"></line>
+
+<line id="ObjLine_InnLen_Outer_BR" stroke="#0000FF" stroke-width="1" opacity="1" x1="493.0044790717032" y1="240.00000000000003" x2="600" y2="201.0568151822935"></line>
+
+<line id="ObjLine_InnLen_Outer_BL" stroke="#0000FF" stroke-width="1" opacity="1" x1="-493.0044790717032" y1="240.00000000000003" x2="-600" y2="201.0568151822935"></line>
+
+
+<line id="ObjLine_InnWid_Outer_TR" stroke="#0000FF" stroke-width="1" opacity="1" x1="347.6681596905678" y1="-373.9426764587396" x2="480.58527525799764" y2="-600"></line>
+
+<line id="ObjLine_InnWid_Outer_TL" stroke="#0000FF" stroke-width="1" opacity="1" x1="-347.6681596905678" y1="-373.9426764587396" x2="-480.58527525799764" y2="-600"></line>
+
+<line id="ObjLine_InnWid_Outer_BR" stroke="#0000FF" stroke-width="1" opacity="1" x1="347.6681596905678" y1="373.9426764587396" x2="480.58527525799764" y2="600"></line>
+
+<line id="ObjLine_InnWid_Outer_BL" stroke="#0000FF" stroke-width="1" opacity="1" x1="-347.6681596905678" y1="373.9426764587396" x2="-480.58527525799764" y2="600"></line>
+
+
+
+</svg>
