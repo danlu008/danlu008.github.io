@@ -24,7 +24,7 @@ function createLineGeometry(vertex, edge, parent) {
 function createPlaneGeometry(vertex, face, parent) {
     let points = [];
     for (let f in face) {
-        [point1_id, point2_id, point3_id] = face[f].vertex_ID;
+        let [point1_id, point2_id, point3_id] = face[f].vertex_ID;
         point1 = vertex[point1_id];
         point2 = vertex[point2_id];
         point3 = vertex[point3_id];
