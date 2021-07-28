@@ -25,9 +25,9 @@ function createPlaneGeometry(vertex, face, parent) {
     let points = [];
     for (let f in face) {
         let [point1_id, point2_id, point3_id] = face[f].vertex_ID;
-        point1 = vertex[point1_id];
-        point2 = vertex[point2_id];
-        point3 = vertex[point3_id];
+        let point1 = vertex[point1_id];
+        let point2 = vertex[point2_id];
+        let point3 = vertex[point3_id];
         points.push(
             point1[0], point1[1], point1[2],
             point2[0], point2[1], point2[2],
@@ -75,10 +75,10 @@ function modifyLineGeometry(Line, vertex, edge) {
 function modifyPlaneGeometry(Plane, vertex, face) {
     let points = [];
     for (let f in face) {
-        [point1_id, point2_id, point3_id] = face[f].vertex_ID;
-        point1 = vertex[point1_id];
-        point2 = vertex[point2_id];
-        point3 = vertex[point3_id];
+        let [point1_id, point2_id, point3_id] = face[f].vertex_ID;
+        let point1 = vertex[point1_id];
+        let point2 = vertex[point2_id];
+        let point3 = vertex[point3_id];
         points.push(
             point1[0], point1[1], point1[2],
             point2[0], point2[1], point2[2],
