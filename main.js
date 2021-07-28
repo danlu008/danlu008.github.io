@@ -117,7 +117,7 @@ scene.add(group);
 
 let origami_structure = new Origami_Structure(crease_pattern);
 console.log(origami_structure);
-fold = new Fold(origami_structure);
+let fold = new Fold(origami_structure);
 console.log(fold);
 
 // const Line = createLineGeometry(origami_structure.vertex, origami_structure.edge, group);
