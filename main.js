@@ -192,6 +192,7 @@ loader.load(
 			}
 
 		}
+        console.log(group);
 
 		scene.add( group );
 
