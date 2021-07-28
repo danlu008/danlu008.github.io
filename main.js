@@ -1,4 +1,6 @@
 import * as THREE from 'https://cdn.skypack.dev/three';
+import { OrbitControls } from 'https://cdn.skypack.dev/three/examples/jsm/controls/OrbitControls.js';
+import { SVGLoader } from 'https://cdn.skypack.dev/three/examples/jsm/loaders/SVGLoader.js';
 
 function createLineGeometry(vertex, edge, parent) {
     let points = [];
@@ -123,9 +125,9 @@ console.log(fold);
 // const Line = createLineGeometry(origami_structure.vertex, origami_structure.edge, group);
 const Plane = createPlaneGeometry(origami_structure.vertex, origami_structure.face, group);
 
-fold_slider = document.getElementById("fold_slider");
-fold_output = document.getElementById("fold_value");
-error_output = document.getElementById("error_value");
+let fold_slider = document.getElementById("fold_slider");
+let fold_output = document.getElementById("fold_value");
+let error_output = document.getElementById("error_value");
 fold_output.innerHTML = fold_slider.value;
 fold_slider.oninput = function() {
     fold_output.innerHTML = fold_slider.value;
@@ -140,7 +142,7 @@ fold_slider.oninput = function() {
     // console.log("update")
 }
 
-controls = new OrbitControls(camera, renderer.domElement);
+let controls = new OrbitControls(camera, renderer.domElement);
 controls.update();
 
 const animate = function() {
@@ -155,7 +157,7 @@ const animate = function() {
 animate();
 
 // instantiate a loader
-const loader = new THREE.SVGLoader();
+const loader = new SVGLoader();
 
 // load a SVG resource
 loader.load(
