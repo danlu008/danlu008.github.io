@@ -1,0 +1,77 @@
+/* Style the tab */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.center {
+    margin: 50px auto 50px auto;
+    /* width: 50%; */
+    /* border: 3px solid green; */
+    /* padding: 10px; */
+}
+
+.tab {
+    overflow: hidden;
+    /* border: 1px solid #ccc; */
+    background-color: #f1f1f1;
+    position: sticky;
+    top: 0;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    font: 20px "Lato", sans-serif;
+    /* background-color: inherit; */
+    height: 60px;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+#home {
+    background-color: rgb(112, 101, 185);
+    color: white;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+#home:hover {
+    background-color: darkslateblue;
+}
+
+/* Create an active/current tablink class */
+/* .tab button.active {
+    background-color: #ccc;
+} */
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    /* padding: 6px 12px; */
+    padding: 0;
+    /* border: 1px solid #ccc; */
+    border-top: none;
+}
+
+.grid-container {
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    /* background-color: #2196F3; */
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }

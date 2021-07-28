@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <header>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </header>
+    <body onload="openPanel(event, '3D')">
+        <div class="tab">
+            <button id="home" class="tablinks">CILab</button>
+            <button class="tablinks" onclick="openPanel(event, '3D')">3D View</button>
+            <button class="tablinks" onclick="openPanel(event, '2D')">2D View</button>
+        </div>
+        
+        <div id="3D" class="tabcontent">
+            <div class="grid-container">
+                <p>Fold Percent: <span id="fold_value"></span>%</p>
+                <br>
+                <input type="range" min="0" max="100" value="0" step="1" class="slider" id="fold_slider">
+            </div>
+            <div class="grid-container">
+                <p>Error: <span id="error_value"></span>%</p>
+            </div>
+        </div>
+    
+
+        <!-- <script src="js/three.js"></script> -->
+        <script type="module">
+            // Find the latest version by visiting https://cdn.skypack.dev/three.
+            import * as THREE from 'https://cdn.skypack.dev/three';
+        </script>
+        <script src="three.js-dev/examples/js/loaders/SVGLoader.js"></script>
+        <script src="js/orbitControls.js"></script>
+        
+        <script type="text/javascript" src="style.js"></script>
+        <script type="text/javascript" src="vector.js"></script>
+        <script type="text/javascript" src="utility.js"></script>
+        <script type="text/javascript" src="crease pattern.js"></script>
+        <script type="text/javascript" src="class.js"></script>
+        <script  type="module" src="main.js"></script>
+    </body>
+</html>
