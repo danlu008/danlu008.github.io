@@ -163,7 +163,7 @@ const loader = new SVGLoader();
 loader.load(
 	// resource URL
 	// 'data/A.svg',
-    'https://github.com/danlu008/origami-maze/blob/master/svg/A.svg',
+    'data/A.svg',
 	// called when the resource is loaded
 	function ( data ) {
 
