@@ -85,6 +85,7 @@ let boundary = Array.from(list).filter(element => element.getAttribute("stroke")
 let _vertex = [];
 let _edge = [];
 let _boundary_edge = [];
+let _whole_edge = [];
 let _face = [];
 let _fold_assign = [];
 
@@ -109,7 +110,7 @@ for (let i = 0; i < boundary.length; i++) {
     let boundary_height = Math.abs(y2-y1);
     width = Math.max(width, boundary_width);
     height = Math.max(height, boundary_height);
-    console.log(width, height);
+    // console.log(width, height);
 }
 let sum = 0;
 for(let i = 0; i < x_list.length; i++){
@@ -121,7 +122,7 @@ for(let i = 0; i < y_list.length; i++){
     sum += Number(y_list[i]);
 }
 center.y = sum/y_list.length;
-console.log(center)
+// console.log(center)
 
 // boundary
 for (let i = 0; i < boundary.length; i++) {
@@ -131,7 +132,7 @@ for (let i = 0; i < boundary.length; i++) {
     let y2 = boundary[i].getAttribute("y2") - center.y;
     let index1 = 0;
     let index2 = 0;
-    console.log(x1, y1, x2, y2);
+    // console.log(x1, y1, x2, y2);
     if (!_vertex.find(element => element[0] == x1 && element[1] == y1)) {
         _vertex.push([x1, y1]);
     }
@@ -141,18 +142,18 @@ for (let i = 0; i < boundary.length; i++) {
     index1 = _vertex.findIndex(element => element[0] == x1 && element[1] == y1);
     index2 = _vertex.findIndex(element => element[0] == x2 && element[1] == y2);
     _boundary_edge.push([index1, index2]);
+    _whole_edge.push([index1, index2]);
 }
 
 // mountain fold
 for (let i = 0; i < mountain_fold.length; i++) {
-    console.log(mountain_fold[i].nodeName)
     let x1 = mountain_fold[i].getAttribute("x1") - center.x;
     let y1 = mountain_fold[i].getAttribute("y1") - center.y;
     let x2 = mountain_fold[i].getAttribute("x2") - center.x;
     let y2 = mountain_fold[i].getAttribute("y2") - center.y;
     let index1 = 0;
     let index2 = 0;
-    console.log(x1, y1, x2, y2);
+    // console.log(x1, y1, x2, y2);
     if (!_vertex.find(element => element[0] == x1 && element[1] == y1)) {
         _vertex.push([x1, y1]);
     }
@@ -162,6 +163,7 @@ for (let i = 0; i < mountain_fold.length; i++) {
     index1 = _vertex.findIndex(element => element[0] == x1 && element[1] == y1);
     index2 = _vertex.findIndex(element => element[0] == x2 && element[1] == y2);
     _edge.push([index1, index2]);
+    _whole_edge.push([index1, index2]);
     _fold_assign.push("M");
 }
 
@@ -174,7 +176,7 @@ for (let i = 0; i < valley_fold.length; i++) {
     let y2 = valley_fold[i].getAttribute("y2") - center.y;
     let index1 = 0;
     let index2 = 0;
-    console.log(x1, y1, x2, y2);
+    // console.log(x1, y1, x2, y2);
     if (!_vertex.find(element => element[0] == x1 && element[1] == y1)) {
         _vertex.push([x1, y1]);
     }
@@ -184,11 +186,47 @@ for (let i = 0; i < valley_fold.length; i++) {
     index1 = _vertex.findIndex(element => element[0] == x1 && element[1] == y1);
     index2 = _vertex.findIndex(element => element[0] == x2 && element[1] == y2);
     _edge.push([index1, index2]);
+    _whole_edge.push([index1, index2]);
     _fold_assign.push("V");
 }
+console.log("_vertex: ", _vertex);
+console.log("_whole_edge: ", _edge);
+// face
+for (let v = 0; v < _vertex.length; v++) {
+    for (let e = 0; e < _whole_edge.length; e++) {
+        let temp = [];
+        let v2 = 0;
+        if (_whole_edge[e].includes(v)) {
+            v2 = _whole_edge[e].find(element => element != v);
+            console.log("v", v)
+            console.log("v2", v2)
 
-console.log(_vertex);
-console.log(_edge);
-console.log(_boundary_edge);
-console.log(_face);
-console.log(_fold_assign);
+            temp.push(v);
+            temp.push(v2);
+            for (let e2 = 0; e2 < _whole_edge.length; e2++) {
+                let v3 = 0;
+                if (e !== e2 && !_whole_edge[e2].includes(v) && _whole_edge[e2].includes(v2)) {
+                    v3 = _whole_edge[e2].find(element => element != v2);
+                    console.log("e2", e2)
+                    console.log("v3", v3)
+                    for (let e3 = 0; e3 < _whole_edge.length; e3++) {
+                        if (e !== e3 && e2 !== e3 && _whole_edge[e3].includes(v) && _whole_edge[e3].includes(v3)) {
+                            temp.push(v3);
+                            console.log("push(v3)", v3)
+                            if (!_face.find(element => element.includes(v) && element.includes(v2) && element.includes(v3))) {
+                                _face.push([v, v2, v3]);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+console.log("_vertex: ", _vertex);
+console.log("_whole_edge: ", _whole_edge);
+console.log("_edge: ", _edge);
+console.log("_boundary_edge: ", _boundary_edge);
+console.log("_face: ", _face);
+console.log("_fold_assign: ", _fold_assign);

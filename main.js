@@ -257,14 +257,14 @@ window.setInterval(function() {
         _fold_angle -= Math.PI/100;
     }
     work_queue.push(_fold_angle);
-}, 10);
+}, 15);
 
 
 window.setInterval(function() {
     if (work_queue.length > 0) {
         current_fold_angle = work_queue.shift();
     }
-    if (fold.axial_error*100 > 0.0000001 || fold.crease_error*100 > 0.0001 || Number(fold_slider.value) !== current_slider || Number(fold_slider.value) !== _fold_angle) {
+    if (fold.axial_error*100 > 0.0001 || fold.crease_error*100 > 0.0001 || Number(fold_slider.value) !== current_slider || Number(fold_slider.value) !== _fold_angle) {
         fold.compute_displacement(current_fold_angle);
         current_slider = Number(fold_slider.value);
         modifyPlaneGeometry(Plane, origami_structure.vertex, origami_structure.face);
@@ -278,7 +278,7 @@ controls.update();
 const animate = function() {
     requestAnimationFrame( animate );
     // group.rotation.x += 0.01;
-    group.rotation.z += 0.01;
+    group.rotation.z += 0.005;
 
 	controls.update();  // required if controls.enableDamping or controls.autoRotate are set to true
     lightHolder.quaternion.copy(camera.quaternion);
