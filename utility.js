@@ -16,3 +16,12 @@ function compute_angle(point1, point2, point3) {
 function cotan(radius) {
     return 1 / Math.tan(radius);
 }
+
+function reduceAngle(angle) {
+    if (angle > Math.PI) {
+        angle -= 2*Math.PI;
+    } else if (angle < -Math.PI) {
+        angle += 2*Math.PI;
+    }
+    return angle;
+}

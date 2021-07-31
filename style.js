@@ -19,6 +19,14 @@ function openPanel(evt, cityName) {
     evt.currentTarget.className += " active";
 }
 
+for (let i = 1; i < 10; i++) {
+    let img = document.createElement('img');
+    img.src = "data/pattern" + i.toString() + ".jpg";
+    img.classList.add("thumbnail");
+    img.onclick = function() {changeTexture(this)};
+    document.getElementById("pattern").appendChild(img);
+}
+
 // function download(content, fileName, contentType) {
 //     var a = document.createElement("a");
 //     var file = new Blob([content], {type: contentType});

@@ -1,6 +1,8 @@
 <!doctype html>
 <html>
     <header>
+        <title> Origami Simulator </title>
+        <link href='favicon.ico' rel='icon'/>
         <link rel="stylesheet" type="text/css" href="style.css">
     </header>
     <body onload="openPanel(event, '3D')">
@@ -12,25 +14,29 @@
         
         <div id="3D" class="tabcontent">
             <div class="grid-container">
-                <p>Fold Percent: <span id="fold_value"></span>%</p>
-                <br>
-                <input type="range" min="0" max="100" value="0" step="1" class="slider" id="fold_slider">
-            </div>
-            <div class="grid-container">
-                <p>Error: <span id="error_value"></span>%</p>
+                <div class="grid" style="width: 33vw">
+                    <p>Fold Percent: <span id="fold_value"></span>%</p>
+                    <br>
+                    <input type="range" min="-100" max="100" value="0" step="1" class="slider" id="fold_slider">
+                    <p>Error: <span id="error_value"></span>%</p>
+                    <div id="pattern">
+                    </div>
+                </div>
+                <div id="3D visualize" class="grid"></div>
             </div>
         </div>
-    
 
-        <!-- <script src="js/three.js"></script> -->
-<!--         <script src="three.js-dev/examples/js/loaders/SVGLoader.js"></script> -->
-<!--         <script src="js/orbitControls.js"></script> A-->
-        
+        <div id="2D" class="tabcontent">
+        </div>
+    
+        <script src="js/three.js"></script>
+        <script src="js/orbitControls.js"></script>
         <script type="text/javascript" src="style.js"></script>
         <script type="text/javascript" src="vector.js"></script>
         <script type="text/javascript" src="utility.js"></script>
-        <script type="text/javascript" src="crease pattern.js"></script>
+        <script type="text/javascript" src="crease-pattern.js"></script>
         <script type="text/javascript" src="class.js"></script>
-        <script  type="module" src="main.js"></script>
+        <!-- <script type="module" src="main.js"></script> -->
+        <script type="text/javascript" src="main.js"></script>
     </body>
 </html>

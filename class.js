@@ -9,6 +9,7 @@ class Fold {
         this.velocity = new Array(origami_structure.vertex.length).fill([0, 0, 0]);
         this.displacement = new Array(origami_structure.vertex.length).fill([0, 0, 0]);
         this.axial_error = this.compute_axial_error(origami_structure);
+        this.crease_error = this.compute_crease_error(origami_structure, 0);
     }
 
     compute_displacement(fold_angle_target) {
@@ -31,8 +32,11 @@ class Fold {
             acceleration[v] = Linear_Algebra.divide(force[v], this.mass);
             this.velocity[v] = Linear_Algebra.add(this.velocity[v], Linear_Algebra.multiply(acceleration[v], this.time_step));
             this.displacement[v] = Linear_Algebra.add(this.displacement[v], Linear_Algebra.multiply(this.velocity[v], this.time_step));
+        }
+        for(let v in origami_structure.vertex) {
             origami_structure.vertex[v] = Linear_Algebra.add(origami_structure.vertex[v], this.displacement[v]);
             origami_structure.update_dihedral_angle();
+            // console.log(origami_structure.normal)
         }
         this.axial_error = this.compute_axial_error(origami_structure);
         this.crease_error = this.compute_crease_error(origami_structure, fold_angle_target);
@@ -64,12 +68,13 @@ class Fold {
 
     compute_crease_force(origami_structure, fold_angle_target) {
         let vertex_crease_force = new Array(origami_structure.vertex.length).fill([0, 0, 0]);
-        let k_fold = 0.5;
+        let k_fold = 5;
         let k_facet = 0.5;
         let normal = origami_structure.normal;
         for (let e in origami_structure.edge) {
             let dihedral_angle = origami_structure.edge[e].dihedral_angle;
             let dihedral_angle_target = 0;
+            let k_crease = k_fold*origami_structure.edge[e].edge_length;
             if (origami_structure.edge[e].fold_assign == "V") {
                 dihedral_angle_target = 1 * fold_angle_target;
             }
@@ -77,7 +82,11 @@ class Fold {
             if (origami_structure.edge[e].fold_assign == "M") {
                 dihedral_angle_target = (-1) * fold_angle_target;
             }
-            let k_crease = k_fold*origami_structure.edge[e].edge_length;
+
+            if (origami_structure.edge[e].fold_assign == "F") {
+                k_crease = 0;
+            }
+
             // if (e == 0) {
             //     console.log("dihedral_angle: ", dihedral_angle)
             //     console.log("dihedral_angle_target: ", dihedral_angle_target)
@@ -88,9 +97,9 @@ class Fold {
 
             let PD_v1 = Linear_Algebra.divide(normal[f1], 2*origami_structure.face[f1].area/origami_structure.edge[e].edge_length);
             let PD_v2 = Linear_Algebra.divide(normal[f2], 2*origami_structure.face[f2].area/origami_structure.edge[e].edge_length);
-            vertex_crease_force[v1] = Linear_Algebra.add(vertex_crease_force[v1], Linear_Algebra.multiply(PD_v1, (-1) * k_crease * (dihedral_angle - dihedral_angle_target)));
-            vertex_crease_force[v2] = Linear_Algebra.add(vertex_crease_force[v2], Linear_Algebra.multiply(PD_v2, (-1) * k_crease * (dihedral_angle - dihedral_angle_target)));
-
+            vertex_crease_force[v1] = Linear_Algebra.add(vertex_crease_force[v1], Linear_Algebra.multiply(PD_v1, (-1) * k_crease * reduceAngle(dihedral_angle - dihedral_angle_target)));
+            vertex_crease_force[v2] = Linear_Algebra.add(vertex_crease_force[v2], Linear_Algebra.multiply(PD_v2, (-1) * k_crease * reduceAngle(dihedral_angle - dihedral_angle_target)));
+            // console.log(reduceAngle(dihedral_angle - dihedral_angle_target))
             let angle_v3_f1 = compute_angle(origami_structure.vertex[v3], origami_structure.vertex[v4], origami_structure.vertex[v1]);
             let angle_v4_f1 = compute_angle(origami_structure.vertex[v4], origami_structure.vertex[v3], origami_structure.vertex[v1]);
             let angle_v3_f2 = compute_angle(origami_structure.vertex[v3], origami_structure.vertex[v4], origami_structure.vertex[v2]);
@@ -100,8 +109,8 @@ class Fold {
             let PD_v3 = Linear_Algebra.add(Linear_Algebra.multiply(PD_v1, -cotan(angle_v4_f1) / (cotan(angle_v3_f1) + cotan(angle_v4_f1))), Linear_Algebra.multiply(PD_v2, -cotan(angle_v4_f2) / (cotan(angle_v3_f2) + cotan(angle_v4_f2))));
             let PD_v4 = Linear_Algebra.add(Linear_Algebra.multiply(PD_v1, -cotan(angle_v3_f1) / (cotan(angle_v3_f1) + cotan(angle_v4_f1))), Linear_Algebra.multiply(PD_v2, -cotan(angle_v3_f2) / (cotan(angle_v3_f2) + cotan(angle_v4_f2))));
             // console.log('PD_v3, PD_v4: ', PD_v3, PD_v4)
-            vertex_crease_force[v3] = Linear_Algebra.add(vertex_crease_force[v3], Linear_Algebra.multiply(PD_v3, (-1) * k_crease * (dihedral_angle - dihedral_angle_target)));
-            vertex_crease_force[v4] = Linear_Algebra.add(vertex_crease_force[v4], Linear_Algebra.multiply(PD_v4, (-1) * k_crease * (dihedral_angle - dihedral_angle_target)));
+            vertex_crease_force[v3] = Linear_Algebra.add(vertex_crease_force[v3], Linear_Algebra.multiply(PD_v3, (-1) * k_crease * reduceAngle(dihedral_angle - dihedral_angle_target)));
+            vertex_crease_force[v4] = Linear_Algebra.add(vertex_crease_force[v4], Linear_Algebra.multiply(PD_v4, (-1) * k_crease * reduceAngle(dihedral_angle - dihedral_angle_target)));
         }
         return vertex_crease_force
     }
@@ -134,7 +143,12 @@ class Fold {
             if (origami_structure.edge[e].fold_assign == "M") {
                 dihedral_angle_target = (-1) * fold_angle_target;
             }
-            error += (dihedral_angle - dihedral_angle_target)/origami_structure.edge.length;
+
+            if (origami_structure.edge[e].fold_assign == "F") {
+                dihedral_angle_target = dihedral_angle;
+            }
+
+            error += reduceAngle(dihedral_angle - dihedral_angle_target)/origami_structure.edge.length;
             // console.log("angle, target: ", dihedral_angle, dihedral_angle_target)
         }
         return Math.abs(error);
@@ -148,6 +162,7 @@ class Origami_Structure {
         this.edge = this.construct_edge(crease_pattern, this.normal);
         this.boundary_edge = this.construct_boundary_edge(crease_pattern);
         this.face = this.construct_face(crease_pattern, this.normal);
+        console.log(this.face)
     }
 
     construct_edge(crease_pattern, normal) {
@@ -196,7 +211,11 @@ class Origami_Structure {
     update_dihedral_angle() {
         // update normal
         this.normal = this.construct_normal(crease_pattern);
-
+        for (let f in crease_pattern.face) {
+            let new_normal = this.compute_face_normal(crease_pattern.vertex, crease_pattern.face[f]);
+            this.face[f].normal = new_normal;
+        }
+        
         let edge = this.edge;
         let boundary_edge = this.boundary_edge;
         for (let e in edge) {
