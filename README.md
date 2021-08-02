@@ -8,11 +8,11 @@ Numerical origami simulation program.
   - [2] [Tachi, Tomohiro. “Freeform Variations of Origami.” (2010).](https://www.semanticscholar.org/paper/Freeform-Variations-of-Origami-Tachi/63cce6287c10342a96c14cda288dd5300602fbc4)
 
 ## Goal
-### ·Origami Architecture Folding Development
+### Origami Architecture Folding Development
 
 ## Milestones
 
-### ·2021/7/29 Adding Constraints (Axial, Crease)
+### 2021/7/29 Adding Constraints (Axial, Crease)
 
-### ·2021/8/1 Adding Texture
+### 2021/8/1 Adding Texture
 ![image](Milestones/Milestone_Adding_Texture.gif)
