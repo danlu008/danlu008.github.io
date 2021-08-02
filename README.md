@@ -7,7 +7,7 @@ Related works:
 [2] Tachi, Tomohiro. “Freeform Variations of Origami.” (2010).
 
 # Milestones
-================
+===========
 ## 2021/7/29 Adding Constraints (Axial, Crease)
 
 ## 2021/8/1 Adding Texture
