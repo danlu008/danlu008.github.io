@@ -7,6 +7,9 @@ Numerical origami simulation program.
   - [1] Ghassaei, Amanda, E. Demaine and N. Gershenfeld. “Fast , Interactive Origami Simulation using GPU Computation.” (2018).
   - [2] Tachi, Tomohiro. “Freeform Variations of Origami.” (2010).
 
+## Goal
+### Origami Architecture Folding Development
+
 ## Milestones
 
 ### 2021/7/29 Adding Constraints (Axial, Crease)
