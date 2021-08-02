@@ -2,10 +2,10 @@
 Demo at https://danlu008.github.io/index.html
 
 Numerical origami simulation program.
-Inspiration & previous works: https://github.com/amandaghassaei/OrigamiSimulator
-Related works:
-[1] Ghassaei, Amanda, E. Demaine and N. Gershenfeld. “Fast , Interactive Origami Simulation using GPU Computation.” (2018).
-[2] Tachi, Tomohiro. “Freeform Variations of Origami.” (2010).
+-Inspiration & previous works: https://github.com/amandaghassaei/OrigamiSimulator
+-Related works:
+  - [1] Ghassaei, Amanda, E. Demaine and N. Gershenfeld. “Fast , Interactive Origami Simulation using GPU Computation.” (2018).
+  - [2] Tachi, Tomohiro. “Freeform Variations of Origami.” (2010).
 
 ## Milestones
 
