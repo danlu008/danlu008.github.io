@@ -1,6 +1,6 @@
 mywebsite https://danlu008.github.io/index.html
 
-Uploading Origami Simulator - Dan Lu.mp4…
+![image](Milestones/Milestone_Adding_Texture.gif)
 
 Numerical origami simulation program.
 Inspiration & previous works: https://github.com/amandaghassaei/OrigamiSimulator
