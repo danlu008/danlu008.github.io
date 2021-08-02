@@ -16,7 +16,7 @@ Numerical origami simulation program.
 
 ## Milestones
 
-- 2021/7/29 Adding Constraints (Axial, Crease)
+### 2021/7/29 Adding Constraints (Axial, Crease)
 
-- 2021/8/1 Adding Texture
+### 2021/8/1 Adding Texture
 ![image](Milestones/Milestone_Adding_Texture.gif)
