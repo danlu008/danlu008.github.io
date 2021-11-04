@@ -1,7 +1,8 @@
 # Numerical Origami Simulator
-Demo at https://danlu008.github.io/index.html
 
 Numerical origami simulation program.
+Demo at https://danlu008.github.io/index.html
+
 - Inspiration & previous works: https://github.com/amandaghassaei/OrigamiSimulator
 
 # Related works
