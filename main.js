@@ -176,7 +176,7 @@ const camera = new THREE.PerspectiveCamera( 30, window_width / window_height, 0.
 // const camera = new THREE.OrthographicCamera( window_width / - scale, window_width / scale, window_height / scale, window_height / - scale, -200, 1000 );
 camera.position.z = 5;
 
-const renderer = new THREE.WebGLRenderer({ antialias: true });
+const renderer = new THREE.WebGLRenderer({ antialias: true; preserveDrawingBuffer: true });
 console.log(renderer)
 
 renderer.setSize( window_width, window_height );
